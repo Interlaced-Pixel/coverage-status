@@ -2,15 +2,6 @@
 
 A minimal VS Code extension that displays code coverage percentage in the status bar by reading `coverage/*.lcov`.
 
-## Setup
-
-```bash
-cd coverage-status
-npm install
-npm run compile
-# Press F5 in VS Code to open Extension Development Host
-```
-
 ## How it works
 
 The extension watches `coverage/*.lcov` and updates the status bar automatically. Use the command "Coverage Status: Refresh" from the Command Palette to force an update.

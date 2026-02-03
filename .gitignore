@@ -3,4 +3,6 @@ out
 .vscode
 package.json
 images/ICON-README.txt
-coverage-status.vsix
+code-coverage-status*.vsix
+coverage-summary.json
+memory_*.md

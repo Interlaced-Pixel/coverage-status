@@ -1,39 +1,56 @@
 {
-  "name": "coverage-status",
-  "displayName": "Coverage Status",
+  "name": "code-coverage-status",
+  "displayName": "Code Coverage Status",
   "description": "Shows code coverage percentage of the currently open file in the VS Code status bar.",
-  "version": "0.0.3",
-  "publisher": "Interlaced Pixel",
-  "identifier": "interlaced-pixel.coverage-status",
-  "author": {"name": "Jared", "email": "jared@interlacedpixel.com"},
+  "version": "0.0.11",
+  "publisher": "InterlacedPixel",
+  "author": {
+    "name": "Jared",
+    "email": "jared@interlacedpixel.com"
+  },
   "repository": {
-     "icon": "images/icon.png",
-     "type": "git",
+    "type": "git",
     "url": "https://github.com/Interlaced-Pixel/coverage-status"
   },
+  "icon": "images/icon.png",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.75.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onStartupFinished", "onCommand:coverageStatus.refresh"],
+  "categories": [
+    "Programming Languages",
+    "Testing"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "workspaceContains:**/lcov.info",
+    "workspaceContains:**/*.lcov"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "coverageStatus.refresh",
         "title": "Coverage Status: Refresh"
+      },
+      {
+        "command": "coverageStatus.showFiles",
+        "title": "Coverage Status: Show Files"
       }
-    ]
-    ,
+    ],
     "configuration": {
       "type": "object",
       "title": "Coverage Status",
       "properties": {
         "coverageStatus.lcovGlob": {
           "type": "array",
-          "items": { "type": "string" },
-          "default": ["**/lcov.info", "**/*.lcov"],
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/lcov.info",
+            "**/*.lcov"
+          ],
           "description": "Glob patterns used to find LCOV files"
         }
       }
@@ -44,13 +61,15 @@
     "compile": "tsc -p .",
     "watch": "tsc -w -p .",
     "package": "vsce package",
-    "pretest": "npm run compile",
-    "test": "node ./out/test/runTest.js"
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "typescript": "^5.0.4",
     "vscode": "^1.1.37",
     "@types/node": "^18.0.0",
     "vsce": "^2.11.0"
-  }
+  },
+  "extensionKind": [
+    "ui"
+  ]
 }
