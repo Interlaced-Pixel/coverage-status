@@ -5,7 +5,8 @@
   "version": "0.0.1",
   "publisher": "Interlaced Pixel",
   "repository": {
-    "type": "git",
+     "icon": "images/icon.png",
+     "type": "git",
     "url": "https://github.com/Interlaced-Pixel/coverage-status"
   },
   "license": "MIT",

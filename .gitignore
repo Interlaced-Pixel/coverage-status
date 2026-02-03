@@ -1,3 +1,6 @@
 node_modules
 out
 .vscode
+package.json
+images/ICON-README.txt
+coverage-status.vsix
