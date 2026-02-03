@@ -2,7 +2,7 @@
   "name": "code-coverage-status",
   "displayName": "Code Coverage Status",
   "description": "Shows code coverage percentage of the currently open file in the VS Code status bar.",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "publisher": "InterlacedPixel",
   "author": {
     "name": "Jared",
